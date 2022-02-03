@@ -1,4 +1,4 @@
-const providerController = require("../controllers/index");
+const providerController = require("./controller");
 
 const getProviderList = (router) => {
   router.get("/provider/list/:provider", async (req, res) => {

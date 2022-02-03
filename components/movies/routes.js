@@ -1,4 +1,4 @@
-const moviesController = require("../controllers/index");
+const moviesController = require("./controller");
 
 const getMovieByScrapper = (router) => {
   router.get("/movies/scrap/:movie", async (req, res) => {

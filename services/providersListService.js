@@ -11,7 +11,7 @@ const getListByProvider = async (provider, page) => {
   const total_pages = data.total_pages;
   const listItems = [];
 
-  for (let i = actual_page; i < total_pages; i++) {
+  for (let i = actual_page; i <= total_pages; i++) {
     const _result = await axios.get(
       `${BASE_URI}${getRequestBody(provider, page)}`
     );
@@ -21,9 +21,12 @@ const getListByProvider = async (provider, page) => {
       console.log(item);
       listItems.push({
         title: item.title,
+        jw_entity_id: item.jw_entity_id,
         full_path: item.full_path,
         year: item.original_release_year,
         type: item.object_type,
+        platform: provider,
+        offers: item.offers,
       });
     });
   }

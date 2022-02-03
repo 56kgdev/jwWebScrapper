@@ -1,4 +1,4 @@
-const scrapper = require("../../../services/scrapper-by-name");
+const scrapper = require("../../services/scrapper-by-name");
 
 const scrapByMovie = async (req, res) => {
   console.log(req.params);
